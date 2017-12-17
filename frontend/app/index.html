@@ -1,0 +1,20 @@
+{% load staticfiles %}
+  
+<html >
+  <head>
+    <title>My Site</title>
+    <script src="{% static 'dist/js/bundle.js' %}"></script>
+  </head>
+  <body ng-app="myApp">
+  {% verbatim%}
+    <div ng-controller="simpleController">
+    <strong>First name:</strong> {{person.firstName}}<br />
+    <strong>Last name:</strong> {{person.lastName}}<br />
+    <strong>Full name:</strong> {{person.getFullName()}}<br />
+  {% endverbatim %}
+    <br />
+    <label>Set the first name: <input type="text" ng-model="person.firstName"/></label><br />
+    <label>Set the last name: <input type="text" ng-model="person.lastName"/></label>
+  </div>
+  </body>
+</html> 
